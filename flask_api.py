@@ -36,7 +36,7 @@ def data_format(data):
     #print("jani",data[0][0])
     script_dir = os.path.dirname(__file__)
     print(script_dir)
-    img_path = os.path.join(script_dir,".\Data\\"+data[0][0])
+    img_path = os.path.join(script_dir,"./Data/"+data[0][0])
     print("jani",img_path)
     x = cv2.imread(img_path)
     x = test_transform(x).unsqueeze(0)
