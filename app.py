@@ -18,11 +18,11 @@ import cv2
 import os
 ###############################################
 
-application = Flask(__name__)
+app = Flask(__name__)
 model = model = load_model()
 diab_dict = { 0:'Negitive', 1:'Positive'}
 
-@application.route('/')
+@app.route('/')
 def home():
     return render_template('index.html')
 
@@ -64,7 +64,7 @@ def run(raw_data):
     # Return the predictions as JSON
     return json.dumps(predicted_classes)
 
-@application.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['POST'])
 def predict():
     '''
     For rendering results on HTML GUI
@@ -91,7 +91,7 @@ def predict():
 
     return render_template('index.html', prediction_text='The person is predicted as {} for diabetes'.format(output))
 
-@application.route('/predict_api',methods=['POST'])
+@app.route('/predict_api',methods=['POST'])
 def predict_api():
     '''
     For direct API calls trought request
@@ -103,4 +103,4 @@ def predict_api():
     return jsonify(output)
 
 if __name__ == "__main__":
-    application.run(debug=True)
+    app.run(debug=True)
