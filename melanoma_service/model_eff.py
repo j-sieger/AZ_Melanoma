@@ -36,17 +36,13 @@ class Net(nn.Module):
 def load_model():
 
     script_dir = os.path.dirname(__file__)
-    print(script_dir)
     rel_path = "../Data/efficientnet-b1-f1951068.pth"
     MODEL_FILEPATH = os.path.join(script_dir, rel_path)
 
     arch = EfficientNet.from_pretrained('efficientnet-b1',weights_path=MODEL_FILEPATH)  # Going to use efficientnet-b1 NN architecture
     model = Net(arch=arch, n_meta_features=12)
-    #model_path = Model.get_model_path('Melanoma_Classify')
     model_path = '../Data/model_dict.pth'
     model_path = os.path.join(script_dir, model_path)
-    #print(model_path)
-    #print(os.getcwd())
     model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
     model.eval()
     
