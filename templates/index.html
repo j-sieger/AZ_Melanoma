@@ -17,17 +17,22 @@
 	<h1>Predict Diabetes</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="Pregnencies" placeholder="Pregnencies" required="required" />
-        <input type="text" name="PlasmaGlucose" placeholder="Plasma Glucose" required="required" />
-		<input type="text" name="BloodPressure" placeholder="Blood Pressure" required="required" />
-		<input type="text" name="TricepThickness" placeholder="Tricep Thickness" required="required" />
-        <input type="text" name="SerumInsulin" placeholder="Serum Insulin" required="required" />
-		<input type="text" name="BMI" placeholder="BMI" required="required" />
-		<input type="text" name="DiabetesPedigree" placeholder="Diabetes Pedigree" required="required" />
-		<input type="text" name="Age" placeholder="Age" required="required" />
+    <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data">
+    	<input type="text" name="Sex" placeholder="Sex" required="required" /><br>
+      <input type="text" name="Age" placeholder="Age Approax" required="required" /><br>
+		  <input type="text" name="AnteriorTorso" placeholder="Anterior Torso" required="required" /><br>
+		  <input type="text" name="HeadNeck" placeholder="Head/Neck" required="required" /><br>
+      <input type="text" name="LateralTorso" placeholder="Lateral Torso" required="required" /><br>
+      <input type="text" name="LowerExtremity" placeholder="Lower Extremity" required="required" /><br>
+		  <input type="text" name="Genitials" placeholder="Genetials" required="required" /><br>
+		  <input type="text" name="Soles" placeholder="Soles" required="required" /><br>
+		  <input type="text" name="PosteriorTorso" placeholder="Posterior Torso" required="required" /><br>
+      <input type="text" name="Torso" placeholder="Torso" required="required" /><br>
+		  <input type="text" name="UpperExtremity" placeholder="Lower Extremity" required="required" /><br>
+      <input type="text" name="NAN" placeholder="NAN" required="required" /><br>
+      <input type = "file" name = "file_img" required="required" /><br>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
    <br>
