@@ -82,7 +82,7 @@ def predict():
 
     output = predicted_classes[0]
 
-    return render_template('index.html', prediction_text='The person is predicted as {} for diabetes'.format(output))
+    return render_template('index.html', prediction_text='The person is predicted as {} '.format(output))
 
 @application.route('/predict_api',methods=['POST'])
 def predict_api():
